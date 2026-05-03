@@ -1,0 +1,23 @@
+<form class="form" (ngSubmit)="onSubmit()" #f="ngForm">
+  <h3 class="title">Datos del estudiante</h3>
+  <label class="field">
+    <span>Nombre completo</span>
+    <input
+      name="fullName"
+      required
+      [ngModel]="fullName()"
+      (ngModelChange)="fullName.set($event)"
+    />
+  </label>
+  <label class="field">
+    <span>Documento</span>
+    <input
+      name="documentNumber"
+      required
+      [ngModel]="documentNumber()"
+      (ngModelChange)="documentNumber.set($event)"
+    />
+  </label>
+  <p class="readonly">Correo: {{ student().email }} (solo lectura en API)</p>
+  <button type="submit" class="btn-primary" [disabled]="f.invalid">Actualizar</button>
+</form>

@@ -1,0 +1,46 @@
+<a routerLink="/students" class="back">← Volver al listado</a>
+
+@if (error()) {
+  <app-error-alert [message]="error()!" (dismissed)="error.set(null)" />
+}
+
+@if (loading()) {
+  <app-loading-state message="Cargando estudiante…" />
+} @else {
+  @let st = student();
+  @if (st) {
+    <header class="header">
+      <div>
+        <h2 class="title">{{ st.fullName }}</h2>
+        <p class="meta">
+          Créditos totales (inscripciones activas): <strong>{{ st.totalCredits }}</strong> · Estado:
+          <strong>{{ st.isActive ? 'Activo' : 'Inactivo' }}</strong>
+        </p>
+      </div>
+      <button type="button" class="btn-danger" [disabled]="blocking()" (click)="onDelete()">Eliminar estudiante</button>
+    </header>
+
+    <section class="columns">
+      <app-student-edit-form [student]="st" (saved)="onUpdate($event)" />
+
+      <div class="stack">
+        <div class="block">
+          <h3>Inscripciones</h3>
+          <app-enrollment-list
+            [studentId]="st.studentId"
+            [enrollments]="st.enrollments"
+            (cancelRequest)="onCancelEnrollment($event)"
+          />
+        </div>
+        <app-enroll-subject-form
+          [subjects]="subjects()"
+          [enrolledSubjectIds]="enrolledSubjectIds()"
+          (enroll)="onEnroll($event)"
+        />
+        @if (blocking()) {
+          <p class="muted">Procesando…</p>
+        }
+      </div>
+    </section>
+  }
+}

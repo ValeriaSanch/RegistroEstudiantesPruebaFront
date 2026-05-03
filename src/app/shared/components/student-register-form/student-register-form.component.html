@@ -1,0 +1,28 @@
+<form class="form" (ngSubmit)="onSubmit()">
+  <h3 class="title">Registrar estudiante</h3>
+  <label class="field">
+    <span>Nombre completo</span>
+    <input name="fullName" required [(ngModel)]="draft.fullName" [ngModelOptions]="{ standalone: true }" />
+  </label>
+  <label class="field">
+    <span>Correo</span>
+    <input
+      name="email"
+      type="email"
+      required
+      [(ngModel)]="draft.email"
+      [ngModelOptions]="{ standalone: true }"
+
+    />
+  </label>
+  <label class="field">
+    <span>Documento</span>
+    <input
+      name="documentNumber"
+      required
+      [(ngModel)]="draft.documentNumber"
+      [ngModelOptions]="{ standalone: true }"
+    />
+  </label>
+  <button type="submit" class="btn-primary" [disabled]="!registrationValid">Guardar</button>
+</form>

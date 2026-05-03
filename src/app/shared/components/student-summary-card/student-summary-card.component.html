@@ -1,0 +1,5 @@
+<article class="card">
+  <h3 class="name">{{ student().fullName }}</h3>
+  <p class="meta">{{ student().email }}</p>
+  <a class="link" [routerLink]="['/students', student().studentId]">Ver ficha</a>
+</article>

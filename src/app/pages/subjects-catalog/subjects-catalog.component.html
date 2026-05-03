@@ -1,0 +1,34 @@
+<h2 class="page-title">Catálogo de materias</h2>
+
+@if (error()) {
+  <app-error-alert [message]="error()!" (dismissed)="error.set(null)" />
+}
+
+@if (loading()) {
+  <app-loading-state />
+} @else if (subjects()?.length === 0) {
+  <p class="muted">No hay materias en el sistema.</p>
+} @else {
+  <div class="table-wrap">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Créditos</th>
+          <th>Profesor</th>
+          <th>Id materia</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (s of subjects()!; track s.subjectId) {
+          <tr>
+            <td>{{ s.name }}</td>
+            <td>{{ s.credits }}</td>
+            <td>{{ s.professorName }}</td>
+            <td class="mono">{{ s.subjectId }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+}

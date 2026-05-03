@@ -1,0 +1,25 @@
+.back {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #0f2740;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.page-title {
+  margin: 0 0 1rem;
+}
+
+.muted {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.925rem;
+}
+
+.list {
+  margin: 0;
+  padding: 0 0 0 1.25rem;
+  font-size: 0.975rem;
+  line-height: 1.6;
+}

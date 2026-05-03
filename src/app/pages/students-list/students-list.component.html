@@ -1,0 +1,29 @@
+<h2 class="page-title">Estudiantes</h2>
+
+@if (error()) {
+  <app-error-alert [message]="error()!" (dismissed)="error.set(null)" />
+}
+
+<div class="grid">
+  <div class="panel">
+    <app-student-register-form (submitted)="onRegister($event)" />
+    @if (saving()) {
+      <p class="muted">Guardando…</p>
+    }
+  </div>
+  <div class="list-panel">
+    @if (loading()) {
+      <app-loading-state />
+    } @else if (students()?.length === 0) {
+      <p class="muted">No hay estudiantes registrados.</p>
+    } @else {
+      <ul class="card-grid">
+        @for (s of students()!; track s.studentId) {
+          <li>
+            <app-student-summary-card [student]="s" />
+          </li>
+        }
+      </ul>
+    }
+  </div>
+</div>

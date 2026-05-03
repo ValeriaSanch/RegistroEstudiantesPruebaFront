@@ -1,0 +1,17 @@
+<form class="form" (ngSubmit)="onSubmit()">
+  <h3 class="title">Inscribir materia</h3>
+  @if (options().length === 0) {
+    <p class="hint">No hay materias disponibles para inscribir.</p>
+  } @else {
+    <label class="field">
+      <span>Materia</span>
+      <select name="subjectId" [(ngModel)]="subjectId" required>
+        <option value="" disabled selected>Seleccione…</option>
+        @for (s of options(); track s.subjectId) {
+          <option [value]="s.subjectId">{{ s.name }} — {{ s.professorName }}</option>
+        }
+      </select>
+    </label>
+    <button type="submit" class="btn-primary" [disabled]="!subjectId">Inscribir</button>
+  }
+</form>
