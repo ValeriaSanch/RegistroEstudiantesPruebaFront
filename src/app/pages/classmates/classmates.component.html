@@ -3,13 +3,15 @@
 <a
   [routerLink]="['/students', id]"
   class="mb-4 inline-block text-sm font-medium text-[#0f2740] no-underline hover:underline"
-  >← Volver al estudiante</a
+  >Volver al estudiante</a
 >
 
 <h2 class="mb-4 text-xl font-semibold text-slate-900">Compañeros de curso</h2>
 
 @if (error()) {
-  <app-error-alert [message]="error()!" (dismissed)="error.set(null)" />
+  <div class="my-3">
+    <app-error-alert [message]="error()!" (dismissed)="error.set(null)" />
+  </div>
 }
 
 @if (loading()) {

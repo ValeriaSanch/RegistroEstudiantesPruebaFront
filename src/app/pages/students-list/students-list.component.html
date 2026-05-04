@@ -1,7 +1,9 @@
 <h2 class="mb-4 text-xl font-semibold text-slate-900">Estudiantes</h2>
 
 @if (error()) {
-  <app-error-alert [message]="error()!" (dismissed)="error.set(null)" />
+  <div class="my-3">
+    <app-error-alert [message]="error()!" (dismissed)="error.set(null)" />
+  </div>
 }
 
 <div class="grid grid-cols-1 items-start gap-5 lg:grid-cols-[minmax(280px,380px)_1fr]">

@@ -1,11 +1,13 @@
 <a
   routerLink="/students"
   class="mb-4 inline-block text-sm font-medium text-[#0f2740] no-underline hover:underline"
-  >← Volver al listado</a
+  >Volver al listado</a
 >
 
 @if (error()) {
-  <app-error-alert [message]="error()!" (dismissed)="error.set(null)" />
+  <div class="my-3">
+    <app-error-alert [message]="error()!" (dismissed)="error.set(null)" />
+  </div>
 }
 
 @if (loading()) {
