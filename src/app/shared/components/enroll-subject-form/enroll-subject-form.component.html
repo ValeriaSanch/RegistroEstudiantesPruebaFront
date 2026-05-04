@@ -1,17 +1,28 @@
-<form class="form" (ngSubmit)="onSubmit()">
-  <h3 class="title">Inscribir materia</h3>
+<form class="flex flex-col gap-2.5 rounded-[10px] border border-slate-200 bg-white p-4" (ngSubmit)="onSubmit()">
+  <h3 class="m-0 text-base font-semibold text-slate-900">Inscribir materia</h3>
   @if (options().length === 0) {
-    <p class="hint">No hay materias disponibles para inscribir.</p>
+    <p class="m-0 text-sm text-slate-500">No hay materias disponibles para inscribir.</p>
   } @else {
-    <label class="field">
+    <label class="flex flex-col gap-1 text-xs text-slate-600">
       <span>Materia</span>
-      <select name="subjectId" [(ngModel)]="subjectId" required>
+      <select
+        name="subjectId"
+        [(ngModel)]="subjectId"
+        required
+        class="rounded-md border border-slate-300 px-2 py-2 text-sm text-slate-900 outline-none focus:border-[#0f2740] focus:ring-1 focus:ring-[#0f2740]"
+      >
         <option value="" disabled selected>Seleccione…</option>
         @for (s of options(); track s.subjectId) {
           <option [value]="s.subjectId">{{ s.name }} — {{ s.professorName }}</option>
         }
       </select>
     </label>
-    <button type="submit" class="btn-primary" [disabled]="!subjectId">Inscribir</button>
+    <button
+      type="submit"
+      class="inline-flex w-fit cursor-pointer items-center rounded-md border-0 bg-[#0f2740] px-3.5 py-2 text-sm font-semibold text-white hover:bg-[#163a5c] disabled:cursor-not-allowed disabled:opacity-50"
+      [disabled]="!subjectId"
+    >
+      Inscribir
+    </button>
   }
 </form>

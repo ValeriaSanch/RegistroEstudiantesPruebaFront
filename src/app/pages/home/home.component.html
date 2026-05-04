@@ -1,11 +1,22 @@
-<section class="hero">
-  <h1>Aplicación de registro académico</h1>
-  <p class="lead">
-    Esta interfaz consume el StudentRegistration.API (<code>/api/v1</code>): estudiantes, inscripciones,
-    catálogo de materias y compañeros de curso.
+<section>
+  <h1 class="mb-2 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+    Aplicación de registro académico
+  </h1>
+  <p class="mb-5 max-w-prose text-sm leading-relaxed text-slate-600 sm:text-base">
+    Esta interfaz consume el StudentRegistration.API (<code class="rounded bg-slate-200 px-1.5 py-0.5 text-xs font-mono"
+      >/api/v1</code
+    >): estudiantes, inscripciones, catálogo de materias y compañeros de curso.
   </p>
-  <div class="actions">
-    <a routerLink="/students" class="btn">Ver estudiantes</a>
-    <a routerLink="/subjects" class="btn secondary">Catálogo de materias</a>
+  <div class="flex flex-wrap gap-3">
+    <a
+      routerLink="/students"
+      class="inline-flex items-center rounded-lg bg-[#0f2740] px-4 py-2.5 text-sm font-semibold text-white no-underline shadow-sm hover:bg-[#163a5c]"
+      >Ver estudiantes</a
+    >
+    <a
+      routerLink="/subjects"
+      class="inline-flex items-center rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-[#0f2740] no-underline shadow-sm hover:bg-slate-50"
+      >Catálogo de materias</a
+    >
   </div>
 </section>

@@ -25,8 +25,7 @@ import { StudentEditFormComponent } from '../../shared/components/student-edit-f
     EnrollmentListComponent,
     EnrollSubjectFormComponent
   ],
-  templateUrl: './student-detail.component.html',
-  styleUrl: './student-detail.component.css'
+  templateUrl: './student-detail.component.html'
 })
 export class StudentDetailComponent {
   private readonly route = inject(ActivatedRoute);

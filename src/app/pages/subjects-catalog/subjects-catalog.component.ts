@@ -9,8 +9,7 @@ import { LoadingStateComponent } from '../../shared/components/loading-state/loa
 @Component({
   selector: 'app-subjects-catalog',
   imports: [ErrorAlertComponent, LoadingStateComponent],
-  templateUrl: './subjects-catalog.component.html',
-  styleUrl: './subjects-catalog.component.css'
+  templateUrl: './subjects-catalog.component.html'
 })
 export class SubjectsCatalogComponent {
   private readonly subjectsApi = inject(SubjectsApiService);

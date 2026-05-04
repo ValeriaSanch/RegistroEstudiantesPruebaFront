@@ -4,7 +4,6 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-main-layout',
   imports: [RouterLink, RouterLinkActive, RouterOutlet],
-  templateUrl: './main-layout.component.html',
-  styleUrl: './main-layout.component.css'
+  templateUrl: './main-layout.component.html'
 })
 export class MainLayoutComponent {}

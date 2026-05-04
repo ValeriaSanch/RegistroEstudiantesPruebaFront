@@ -11,8 +11,7 @@ import { LoadingStateComponent } from '../../shared/components/loading-state/loa
 @Component({
   selector: 'app-classmates',
   imports: [RouterLink, ErrorAlertComponent, LoadingStateComponent],
-  templateUrl: './classmates.component.html',
-  styleUrl: './classmates.component.css'
+  templateUrl: './classmates.component.html'
 })
 export class ClassmatesComponent {
   protected readonly route = inject(ActivatedRoute);

@@ -16,8 +16,7 @@ import { StudentSummaryCardComponent } from '../../shared/components/student-sum
     StudentRegisterFormComponent,
     StudentSummaryCardComponent
   ],
-  templateUrl: './students-list.component.html',
-  styleUrl: './students-list.component.css'
+  templateUrl: './students-list.component.html'
 })
 export class StudentsListComponent {
   private readonly studentsApi = inject(StudentsApiService);

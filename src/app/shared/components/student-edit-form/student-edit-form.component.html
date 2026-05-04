@@ -1,23 +1,31 @@
-<form class="form" (ngSubmit)="onSubmit()" #f="ngForm">
-  <h3 class="title">Datos del estudiante</h3>
-  <label class="field">
+<form class="flex max-w-md flex-col gap-3 rounded-[10px] border border-slate-200 bg-white p-4" (ngSubmit)="onSubmit()" #f="ngForm">
+  <h3 class="m-0 mb-1 text-base font-semibold text-slate-900">Datos del estudiante</h3>
+  <label class="flex flex-col gap-1 text-xs text-slate-600">
     <span>Nombre completo</span>
     <input
       name="fullName"
       required
       [ngModel]="fullName()"
       (ngModelChange)="fullName.set($event)"
+      class="rounded-md border border-slate-300 px-2 py-2 text-sm text-slate-900 outline-none focus:border-[#0f2740] focus:ring-1 focus:ring-[#0f2740]"
     />
   </label>
-  <label class="field">
+  <label class="flex flex-col gap-1 text-xs text-slate-600">
     <span>Documento</span>
     <input
       name="documentNumber"
       required
       [ngModel]="documentNumber()"
       (ngModelChange)="documentNumber.set($event)"
+      class="rounded-md border border-slate-300 px-2 py-2 text-sm text-slate-900 outline-none focus:border-[#0f2740] focus:ring-1 focus:ring-[#0f2740]"
     />
   </label>
-  <p class="readonly">Correo: {{ student().email }} (solo lectura en API)</p>
-  <button type="submit" class="btn-primary" [disabled]="f.invalid">Actualizar</button>
+  <p class="m-0 text-xs text-slate-500">Correo: {{ student().email }} (solo lectura en API)</p>
+  <button
+    type="submit"
+    class="mt-1 inline-flex w-fit cursor-pointer items-center rounded-md border-0 bg-[#0f2740] px-3.5 py-2 text-sm font-semibold text-white hover:bg-[#163a5c] disabled:cursor-not-allowed disabled:opacity-50"
+    [disabled]="f.invalid"
+  >
+    Actualizar
+  </button>
 </form>

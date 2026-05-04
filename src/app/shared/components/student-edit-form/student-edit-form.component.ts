@@ -6,8 +6,7 @@ import type { Student } from '../../../core/models/student.model';
 @Component({
   selector: 'app-student-edit-form',
   imports: [FormsModule],
-  templateUrl: './student-edit-form.component.html',
-  styleUrl: './student-edit-form.component.css'
+  templateUrl: './student-edit-form.component.html'
 })
 export class StudentEditFormComponent {
   readonly student = input.required<Student>();

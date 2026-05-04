@@ -6,8 +6,7 @@ import type { StudentSummary } from '../../../core/models/student.model';
 @Component({
   selector: 'app-student-summary-card',
   imports: [RouterLink],
-  templateUrl: './student-summary-card.component.html',
-  styleUrl: './student-summary-card.component.css'
+  templateUrl: './student-summary-card.component.html'
 })
 export class StudentSummaryCardComponent {
   readonly student = input.required<StudentSummary>();

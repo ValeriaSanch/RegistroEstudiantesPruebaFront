@@ -1,21 +1,29 @@
 @if (enrollments().length === 0) {
-  <p class="empty">No hay inscripciones activas.</p>
+  <p class="m-0 text-sm text-slate-500">No hay inscripciones activas.</p>
 } @else {
-  <ul class="list">
+  <ul class="m-0 flex list-none flex-col gap-2 p-0">
     @for (e of enrollments(); track e.enrollmentId) {
       @if (e.isActive) {
-        <li class="row">
-          <div class="info">
-            <span class="subject">{{ e.subjectName }}</span>
-            <span class="sub">{{ e.credits }} créd. · {{ e.professorName }}</span>
+        <li
+          class="flex flex-wrap items-center justify-between gap-2.5 rounded-lg border border-slate-200 bg-white px-3 py-2.5"
+        >
+          <div class="flex min-w-0 flex-col gap-0.5">
+            <span class="text-[0.95rem] font-semibold text-slate-900">{{ e.subjectName }}</span>
+            <span class="text-xs text-slate-500">{{ e.credits }} créd. · {{ e.professorName }}</span>
           </div>
-          <div class="actions">
+          <div class="flex flex-wrap items-center gap-2">
             <a
-              class="link"
+              class="text-sm font-medium text-[#0f2740] no-underline hover:underline"
               [routerLink]="['/students', studentId(), 'classmates', e.subjectId]"
               >Compañeros</a
             >
-            <button type="button" class="btn-danger" (click)="onCancel(e)">Cancelar</button>
+            <button
+              type="button"
+              class="cursor-pointer rounded-md border border-red-200 bg-white px-2 py-1 text-xs font-medium text-red-700 hover:bg-red-50"
+              (click)="onCancel(e)"
+            >
+              Cancelar
+            </button>
           </div>
         </li>
       }

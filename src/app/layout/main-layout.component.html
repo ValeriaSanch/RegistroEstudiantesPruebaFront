@@ -1,13 +1,33 @@
-<div class="shell">
-  <header class="header">
-    <a routerLink="/" class="brand">Registro de estudiantes</a>
-    <nav class="nav">
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
-      <a routerLink="/students" routerLinkActive="active">Estudiantes</a>
-      <a routerLink="/subjects" routerLinkActive="active">Materias</a>
+<div class="flex min-h-screen flex-col bg-slate-100 text-slate-900 antialiased">
+  <header
+    class="flex flex-wrap items-center justify-between gap-4 bg-[#0f2740] px-6 py-3.5 text-white shadow-sm"
+  >
+    <a routerLink="/" class="text-base font-semibold text-white no-underline hover:opacity-90"
+      >Registro de estudiantes</a
+    >
+    <nav class="flex flex-wrap gap-2">
+      <a
+        routerLink="/"
+        routerLinkActive="bg-white/20 font-semibold text-white"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="rounded-md px-2.5 py-1.5 text-sm text-white/85 no-underline hover:bg-white/10"
+        >Inicio</a
+      >
+      <a
+        routerLink="/students"
+        routerLinkActive="bg-white/20 font-semibold text-white"
+        class="rounded-md px-2.5 py-1.5 text-sm text-white/85 no-underline hover:bg-white/10"
+        >Estudiantes</a
+      >
+      <a
+        routerLink="/subjects"
+        routerLinkActive="bg-white/20 font-semibold text-white"
+        class="rounded-md px-2.5 py-1.5 text-sm text-white/85 no-underline hover:bg-white/10"
+        >Materias</a
+      >
     </nav>
   </header>
-  <main class="main">
+  <main class="mx-auto w-full max-w-[1100px] flex-1 box-border px-4 py-5 sm:px-8">
     <router-outlet />
   </main>
 </div>

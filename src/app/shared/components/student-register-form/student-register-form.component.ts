@@ -6,8 +6,7 @@ import type { RegisterStudentRequest } from '../../../core/models/student.model'
 @Component({
   selector: 'app-student-register-form',
   imports: [FormsModule],
-  templateUrl: './student-register-form.component.html',
-  styleUrl: './student-register-form.component.css'
+  templateUrl: './student-register-form.component.html'
 })
 export class StudentRegisterFormComponent {
   readonly submitted = output<RegisterStudentRequest>();

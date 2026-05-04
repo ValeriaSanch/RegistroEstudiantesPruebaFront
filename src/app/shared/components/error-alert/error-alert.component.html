@@ -1,4 +1,14 @@
-<div class="alert" role="alert">
-  <p class="text">{{ message() }}</p>
-  <button type="button" class="close" (click)="onClose()" aria-label="Cerrar">×</button>
+<div
+  class="flex items-start justify-between gap-3 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-red-900"
+  role="alert"
+>
+  <p class="m-0 flex-1 text-sm leading-snug">{{ message() }}</p>
+  <button
+    type="button"
+    class="shrink-0 cursor-pointer border-0 bg-transparent px-1 text-xl leading-none text-inherit hover:opacity-75"
+    (click)="onClose()"
+    aria-label="Cerrar"
+  >
+    ×
+  </button>
 </div>

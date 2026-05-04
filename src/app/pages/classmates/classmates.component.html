@@ -1,8 +1,12 @@
 @let id = route.snapshot.paramMap.get('id');
 
-<a [routerLink]="['/students', id]" class="back">← Volver al estudiante</a>
+<a
+  [routerLink]="['/students', id]"
+  class="mb-4 inline-block text-sm font-medium text-[#0f2740] no-underline hover:underline"
+  >← Volver al estudiante</a
+>
 
-<h2 class="page-title">Compañeros de curso</h2>
+<h2 class="mb-4 text-xl font-semibold text-slate-900">Compañeros de curso</h2>
 
 @if (error()) {
   <app-error-alert [message]="error()!" (dismissed)="error.set(null)" />
@@ -11,9 +15,9 @@
 @if (loading()) {
   <app-loading-state />
 } @else if (classmates()?.length === 0) {
-  <p class="muted">No hay compañeros listados para esta materia.</p>
+  <p class="m-0 text-sm text-slate-500">No hay compañeros listados para esta materia.</p>
 } @else {
-  <ul class="list">
+  <ul class="m-0 list-disc pl-5 text-base leading-relaxed text-slate-800">
     @for (c of classmates()!; track c.studentId) {
       <li>{{ c.fullName }}</li>
     }

@@ -6,8 +6,7 @@ import type { Enrollment } from '../../../core/models/enrollment.model';
 @Component({
   selector: 'app-enrollment-list',
   imports: [RouterLink],
-  templateUrl: './enrollment-list.component.html',
-  styleUrl: './enrollment-list.component.css'
+  templateUrl: './enrollment-list.component.html'
 })
 export class EnrollmentListComponent {
   readonly studentId = input.required<string>();

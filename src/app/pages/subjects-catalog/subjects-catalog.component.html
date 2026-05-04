@@ -1,4 +1,4 @@
-<h2 class="page-title">Catálogo de materias</h2>
+<h2 class="mb-4 text-xl font-semibold text-slate-900">Catálogo de materias</h2>
 
 @if (error()) {
   <app-error-alert [message]="error()!" (dismissed)="error.set(null)" />
@@ -7,25 +7,25 @@
 @if (loading()) {
   <app-loading-state />
 } @else if (subjects()?.length === 0) {
-  <p class="muted">No hay materias en el sistema.</p>
+  <p class="m-0 text-sm text-slate-500">No hay materias en el sistema.</p>
 } @else {
-  <div class="table-wrap">
-    <table class="table">
+  <div class="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
+    <table class="w-full border-collapse text-sm">
       <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Créditos</th>
-          <th>Profesor</th>
-          <th>Id materia</th>
+        <tr class="border-b border-slate-200 bg-slate-50 text-left text-slate-700">
+          <th class="px-3.5 py-2.5 font-semibold">Nombre</th>
+          <th class="px-3.5 py-2.5 font-semibold">Créditos</th>
+          <th class="px-3.5 py-2.5 font-semibold">Profesor</th>
+          <th class="px-3.5 py-2.5 font-semibold">Id materia</th>
         </tr>
       </thead>
       <tbody>
         @for (s of subjects()!; track s.subjectId) {
-          <tr>
-            <td>{{ s.name }}</td>
-            <td>{{ s.credits }}</td>
-            <td>{{ s.professorName }}</td>
-            <td class="mono">{{ s.subjectId }}</td>
+          <tr class="border-b border-slate-200 last:border-b-0">
+            <td class="px-3.5 py-2.5">{{ s.name }}</td>
+            <td class="px-3.5 py-2.5">{{ s.credits }}</td>
+            <td class="px-3.5 py-2.5">{{ s.professorName }}</td>
+            <td class="px-3.5 py-2.5 font-mono text-xs text-slate-500">{{ s.subjectId }}</td>
           </tr>
         }
       </tbody>

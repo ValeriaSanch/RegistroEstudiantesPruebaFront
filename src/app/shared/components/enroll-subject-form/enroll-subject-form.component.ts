@@ -6,8 +6,7 @@ import type { Subject } from '../../../core/models/subject.model';
 @Component({
   selector: 'app-enroll-subject-form',
   imports: [FormsModule],
-  templateUrl: './enroll-subject-form.component.html',
-  styleUrl: './enroll-subject-form.component.css'
+  templateUrl: './enroll-subject-form.component.html'
 })
 export class EnrollSubjectFormComponent {
   readonly subjects = input.required<Subject[]>();
